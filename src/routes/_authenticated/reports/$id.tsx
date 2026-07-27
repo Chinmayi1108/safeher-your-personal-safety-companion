@@ -83,7 +83,7 @@ function ReportDetail() {
       await updateIncident(record.id, {
         ai_report: report,
         ai_generated_at: new Date().toISOString(),
-        status: "reviewed",
+        status: "submitted",
       });
       await queryClient.invalidateQueries({ queryKey: ["incident", id] });
       toast.success("Report generated.");
